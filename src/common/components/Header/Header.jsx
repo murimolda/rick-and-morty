@@ -7,10 +7,14 @@ export const Header = () => {
     <header className={s.container}>
       <nav>
         <NavLink to={"/"}><img src={logo} alt="logotype" /></NavLink>
-        <NavLink to={"/"} className={s.headerLink}>Home</NavLink>
-        <NavLink to={"/characters"} className={s.headerLink}>Characters</NavLink>
-        <NavLink to={"/locations"} className={s.headerLink}>Locations</NavLink>
-        <NavLink to={"/episodes"} className={s.headerLink}>Episodes</NavLink>
+        <NavLink to={"/"} className={({ isActive }) => isActive ? `${s.headerLink} ${s.active}` : s.headerLink
+  }>Home</NavLink>
+        <NavLink to={"/characters"} className={({ isActive }) => isActive ? `${s.headerLink} ${s.active}` : s.headerLink
+  }>Characters</NavLink>
+        <NavLink to={"/locations"} className={({ isActive }) => isActive ? `${s.headerLink} ${s.active}` : s.headerLink
+  }>Locations</NavLink>
+        <NavLink to={"/episodes"} className={({ isActive }) => isActive ? `${s.headerLink} ${s.active}` : s.headerLink
+  }>Episodes</NavLink>
       </nav>
     </header>
   )
